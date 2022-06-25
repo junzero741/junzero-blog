@@ -6,8 +6,9 @@ import mongoose, { Model } from "mongoose"
 export const connect = async () => {
     const conn = await mongoose
       .connect(process.env.DATABASE_URL as string)
+      .then(() => console.log("Mongoose Connection Established"))
       .catch(err => console.log(err))
-    console.log("Mongoose Connection Established")
+    
   
     // OUR TODO SCHEMA
     const TodoSchema = new mongoose.Schema({

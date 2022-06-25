@@ -17,15 +17,19 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       res.json(await Todo.find().catch(catcher))
     },
     // RESPONSE POST REQUESTS
-    POST: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Todo } = await connect() // connect to database
-      res.json(await Todo.create(req.body).catch(catcher))
-    },
+    // POST 요청 주체가 admin 인지 검사 한 후 아래 api 를 추가하자.
+    // POST: async (req: NextApiRequest, res: NextApiResponse) => {
+    //   const { Todo } = await connect() // connect to database
+    //   res.json(await Todo.create(req.body).catch(catcher))
+    // },
   }
 
   // Check if there is a response for the particular method, if so invoke it, if not response with an error
   const response = handleCase[method]
-  if (response) response(req, res)
+  if (response) {
+    // console.log("response : ",  response);
+    return response(req, res)
+  }
   else res.status(400).json({ error: "No Response for This Request" })
 }
 
