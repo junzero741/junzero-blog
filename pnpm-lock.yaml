@@ -52,7 +52,7 @@ importers:
         version: 0.160.0
       github-markdown-css:
         specifier: ^5.4.0
-        version: 5.5.0
+        version: 5.8.1
       highlight.js:
         specifier: ^11.9.0
         version: 11.9.0
@@ -5904,8 +5904,8 @@ packages:
     resolution: {integrity: sha512-LF8VeHeR7v+wAbXqfgRlTSX/1BJR9Q1vEMR8JAz1cEg6GX07+zyj3sAdDvYjj/xnlIfVuGgj4qBei1K3hKH+PA==}
     dev: true
 
-  /github-markdown-css@5.5.0:
-    resolution: {integrity: sha512-Ncp4putm+cGteDhtNYKGdchM4uiIm5tmQcAQx/eEYhuM0sOdjZYNQOauQTaodjDQjfw7whU99MijwC1M0FUY4w==}
+  /github-markdown-css@5.8.1:
+    resolution: {integrity: sha512-8G+PFvqigBQSWLQjyzgpa2ThD9bo7+kDsriUIidGcRhXgmcaAWUIpCZf8DavJgc+xifjbCG+GvMyWr0XMXmc7g==}
     engines: {node: '>=10'}
     dev: false
 
