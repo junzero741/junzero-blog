@@ -4,7 +4,6 @@ import PostComp from '@/components/PostComp';
 import PostRepositoryImpl from '@/repository/PostRepositoryImpl';
 const PageHitsComp = dynamic(() => import('@/components/PageHitsComp'), { ssr: false });
 import { Suspense } from 'react';
-import { DOMAIN } from '@/utils/constants';
 
 type Props = {
   params: { slug: string }
@@ -21,13 +20,14 @@ export async function generateMetadata(
 	const title = `${post.postName.replaceAll('-', ' ')} - ${parentTitle}`;
 	const previousImages = (await parent).openGraph?.images || []
 
-	// TODO : 한글 인코딩 문제 해결
-	// const image = await fetch(`${DOMAIN.origin}/api/og?title=${title}`);
+	const description = '소프트웨어 개발자 정준영의 글입니다.';
 	
   return {
     title: title,
+		description: description,
 		openGraph: {
 			title: title,
+			description: description,
 			type: 'article',
 			publishedTime: post.publishedAt.toISOString(),
 			images: [...previousImages],
@@ -44,7 +44,6 @@ export default async function PostDetail({ params }: { params: { slug: string } 
 		<div>
 			<Suspense fallback={<>Loading...</>}>
 				<PostComp post={post} />
-				{/* TODO : 페이지 조회수가 아닌 게시글 조회수로 변경 */}
 				<PageHitsComp />
 			</Suspense>
 		</div>
