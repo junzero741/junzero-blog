@@ -12,7 +12,7 @@
 		"@repo/database": "workspace:*",
 		"@aws-sdk/client-s3": "^3.456.0",
 		"@react-three/cannon": "^6.6.0",
-		"@react-three/drei": "^9.92.7",
+		"@react-three/drei": "^10.0.0",
 		"@react-three/fiber": "^8.15.12",
 		"@types/three": "^0.160.0",
 		"github-markdown-css": "^5.4.0",
